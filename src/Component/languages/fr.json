@@ -1,0 +1,18 @@
+{
+    "impromptu":"Impromptu",
+    "menu":"menu",
+    "apropos":"a propos",
+    "home":{
+        "title":"Maison de création d'abat jour sur mesure",
+        "text1":"Créé en 1986, Impromptu est à votre écoute pour réaliser vos abat-jour sur mesure dans un style traditionnel ou contemporain. De nombreux modèles, peints à la main, plissés ou contrecollés sont visibles sur ce site ou à l’atelier.",
+        "text2":"Contactez nous, nous ferons tout notre possible pour satisfaire vos désirs. 01 42 27 62 99 ou au 06 49 49 83 80"
+    },
+    "navbar":{
+        "apropos":"a propos",
+        "traditionnel":"abat jour traditionnel",
+        "contemporain":"abat jour contemporain",
+        "application":"appliqués",
+        "surmesure":"le sur-mesure",
+        "horaires":"horaires"
+    }
+    }
