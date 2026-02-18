@@ -1,15 +1,28 @@
-import { useContext, useState } from "react";
+import { Dispatch, SetStateAction, useContext, useState } from "react";
 import { Link } from "react-router"
 import { LanguageContext } from "../languages";
 import LanguageSelector from "../languages/languageSelector/LanguageSelector";
-const MenuElement = ({text,to}:{text:string,to?:string,popup?:Element})=>{
+import Horaire from "../horaire/horaire";
+const MenuElement = ({text,to,popup}:{text:string,to?:string,popup?:()=>void})=>{
+    if(popup){
+        return (
+            <div className="w-fit p-1 sm:p-4 font-mt text-black hover:bg-red hover:text-white text-3xs sm:text-base "  onClick={()=>popup()}>
+                {text}
+            </div>
+        )
+    }
+    
     return (
-        <Link className="w-fit p-1 sm:p-4 font-mt text-black hover:bg-red hover:text-white text-3xs sm:text-base " to={to ?? ''}>
+        <Link className="w-fit p-1 sm:p-4 font-mt text-black hover:bg-red hover:text-white text-3xs sm:text-base " to={to ?? ''} >
             {text}
         </Link>
     )
 }
-const Navbar = ()=>{
+type NavbarProps = {
+    setPopup: Dispatch<SetStateAction<any>>
+    setIsOpenPopup: Dispatch<SetStateAction<any>>
+}
+const Navbar = ({setPopup,setIsOpenPopup}:NavbarProps)=>{
     const { dictionnaire } = useContext(LanguageContext);
     const [isOpen,setIsOpen] = useState(false)
 
@@ -38,7 +51,7 @@ const Navbar = ()=>{
                 {MenuElement({text:dictionnaire.navbar.contemporain.toUpperCase(),to:'contemporain'})}
                 {MenuElement({text:dictionnaire.navbar.application.toUpperCase(),to:'application'})}
                 {MenuElement({text:dictionnaire.navbar.surmesure.toUpperCase(),to:"surmesure"})}
-                {MenuElement({text:dictionnaire.navbar.horaires.toUpperCase()})}
+                {MenuElement({text:dictionnaire.navbar.horaires.toUpperCase(),popup:()=>{setPopup(<Horaire/>);setIsOpenPopup(true)}})}
                 <LanguageSelector />
 
             </div>}

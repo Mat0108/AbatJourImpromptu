@@ -14,5 +14,15 @@
         "application":"appliqués",
         "surmesure":"le sur-mesure",
         "horaires":"horaires"
+    },
+    "horaire":{
+        "lundi":"lundi",
+        "mardi":"mardi",
+        "mercredi":"mercredi",
+        "jeudi":"jeudi",
+        "vendredi":"vendredi",
+        "samedi":"samedi",
+        "dimanche":"dimanche",
+        "close":"fermé"
     }
     }

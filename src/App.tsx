@@ -12,6 +12,9 @@ import './ReactToastify.css'
 import Home from './Screens/Home';
 import Loading from './Component/Loading/Loading';
 import { LanguageProvider } from './Component/languages';
+import AdminLogin from './Screens/Admin/Admin_login';
+import AdminMain from './Screens/Admin/Admin_main';
+import Admin_home from './Screens/Admin/Home/Admin_home';
 
 function App() {
   const [isOpen,setIsOpen] = useState(false)
@@ -33,8 +36,10 @@ function App() {
                             </div>
                 </Dialog>
                 <Routes >        
-                  <Route path="/*" element={<Home/>}></Route>
-                
+                  <Route path="/" element={<Home setPopup={setPopup} setIsOpenPopup={setIsOpen}/>}></Route>
+                  <Route path="/admin" element={<AdminLogin/>}></Route>
+                  <Route path="/admin/main" element={<AdminMain />}></Route>
+                  <Route path="/admin/home" element={<Admin_home/>}></Route>
                   
                 </Routes>
               </Suspense>

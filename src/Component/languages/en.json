@@ -1,6 +1,7 @@
 {
     "impromptu":"Impromptu",
     "menu":"menu",
+    "apropos":"about",
     "home":{
         "title":"Custom lampshade design studio",
         "text1":"Founded in 1986, Impromptu is on hand to make your bespoke lampshades in traditional or contemporary styles. A wide range of hand-painted, pleated and laminated models can be viewed on this website or in our workshop.",
@@ -13,5 +14,15 @@
         "application":"applications",
         "surmesure":"made-to-measure",
         "horaires":"opening hours"
+    },
+    "horaire":{
+        "lundi":"Monday",
+        "mardi":"Tuesday",
+        "mercredi":"Wednesday",
+        "jeudi":"Thursday",
+        "vendredi":"Friday",
+        "samedi":"Saturday",
+        "dimanche":"Sunday",
+        "close":"closed"
     }
 }
