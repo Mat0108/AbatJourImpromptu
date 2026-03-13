@@ -1,30 +1,28 @@
 import { Dispatch, SetStateAction, useContext, useState } from "react";
 import { Link } from "react-router"
-import { LanguageContext } from "../languages";
+import {  useLanguage } from "../languages";
 import LanguageSelector from "../languages/languageSelector/LanguageSelector";
-import Horaire from "../horaire/horaire";
+import Information from "../popup/information/information";
+import { usePopup } from "../popup/PopupContext";
 const MenuElement = ({text,to,popup}:{text:string,to?:string,popup?:()=>void})=>{
     if(popup){
         return (
-            <div className="w-fit p-1 sm:p-4 font-mt text-black hover:bg-red hover:text-white text-3xs sm:text-base "  onClick={()=>popup()}>
+            <div className="w-fit p-1 sm:p-4 font-mt text-black hover:bg-red hover:text-white text-2xs sm:text-base "  onClick={()=>popup()}>
                 {text}
             </div>
         )
     }
     
     return (
-        <Link className="w-fit p-1 sm:p-4 font-mt text-black hover:bg-red hover:text-white text-3xs sm:text-base " to={to ?? ''} >
+        <Link className="w-fit p-1 sm:p-4 font-mt text-black hover:bg-red hover:text-white text-2xs sm:text-base " to={to ?? ''} >
             {text}
         </Link>
     )
 }
-type NavbarProps = {
-    setPopup: Dispatch<SetStateAction<any>>
-    setIsOpenPopup: Dispatch<SetStateAction<any>>
-}
-const Navbar = ({setPopup,setIsOpenPopup}:NavbarProps)=>{
-    const { dictionnaire } = useContext(LanguageContext);
+const Navbar = ()=>{
+    const { dictionnaire } =  useLanguage()
     const [isOpen,setIsOpen] = useState(false)
+    const {openPopup} = usePopup();
 
     const isMobile = window.screen.width < 600;
     return (
@@ -37,25 +35,24 @@ const Navbar = ({setPopup,setIsOpenPopup}:NavbarProps)=>{
                 
                 <div className="absolute right-2 top-0 w-fit h-full flex center"><LanguageSelector/></div>
                 {!isOpen ? '': <div className="absolute top-full left-0 w-full flex flex-col bg-white   ">
-                    {MenuElement({text:dictionnaire.apropos.toUpperCase(),to:'apropos'})}
-                    {MenuElement({text:dictionnaire.navbar.traditionnel.toUpperCase(),to:'traditionnel'})}
+                    {MenuElement({text:dictionnaire.apropos.toUpperCase(),to:''})}
+                    {MenuElement({text:dictionnaire.navbar.traditionnel.toUpperCase(),to:'..traditionnel'})}
                     {MenuElement({text:dictionnaire.navbar.contemporain.toUpperCase(),to:'contemporain'})}
                     {MenuElement({text:dictionnaire.navbar.application.toUpperCase(),to:'application'})}
                     {MenuElement({text:dictionnaire.navbar.surmesure.toUpperCase(),to:"surmesure"})}
-                    {MenuElement({text:dictionnaire.navbar.horaires.toUpperCase()})}
+                    {MenuElement({text:dictionnaire.navbar.horaires.toUpperCase(),popup:()=>{openPopup(<Information />);}})}
+                    {/* {MenuElement({text:dictionnaire.navbar.horaires.toUpperCase(),to:"information"})} */}
                 </div>}
             </div>:
             <div className="w-full flex center ">
-                {MenuElement({text:dictionnaire.apropos.toUpperCase(),to:'apropos'})}
+                {MenuElement({text:dictionnaire.apropos.toUpperCase(),to:''})}
                 {MenuElement({text:dictionnaire.navbar.traditionnel.toUpperCase(),to:'traditionnel'})}
                 {MenuElement({text:dictionnaire.navbar.contemporain.toUpperCase(),to:'contemporain'})}
                 {MenuElement({text:dictionnaire.navbar.application.toUpperCase(),to:'application'})}
                 {MenuElement({text:dictionnaire.navbar.surmesure.toUpperCase(),to:"surmesure"})}
-                {MenuElement({text:dictionnaire.navbar.horaires.toUpperCase(),popup:()=>{setPopup(<Horaire/>);setIsOpenPopup(true)}})}
+                {MenuElement({text:dictionnaire.navbar.horaires.toUpperCase(),popup:()=>{openPopup(<Information/>)}})}
                 <LanguageSelector />
-
             </div>}
-            
         </div>
     )
 }

@@ -5,7 +5,7 @@
     "home":{
         "title":"Custom lampshade design studio",
         "text1":"Founded in 1986, Impromptu is on hand to make your bespoke lampshades in traditional or contemporary styles. A wide range of hand-painted, pleated and laminated models can be viewed on this website or in our workshop.",
-        "text2":"Contact us and we'll do everything we can to meet your requirements. 01 42 27 62 99 or 06 49 49 83 80"
+        "text2":"Contact us and we'll do everything we can to meet your requirements. 06 49 49 83 80"
     },
     "navbar":{
         "apropos":"about",
@@ -23,6 +23,27 @@
         "vendredi":"Friday",
         "samedi":"Saturday",
         "dimanche":"Sunday",
-        "close":"closed"
+        "close":"closed",
+        "from":"closed from",
+        "to":"to",
+        "maps":"See the itinerary on Google Maps"
+    },
+    "contact":{
+        "contact":"contact",
+        "numero":"06 49 49 83 80"
+    },
+    "traditionnel":{
+        "title":"traditional",
+        "text":"Passionate about light, Philippe Lempérière is convinced that it creates atmosphere, sculpts volumes and enhances the objects we love."
+    },
+    "contemporain":{
+        "title":"contemporain",
+        "text1": "Used to working with interior designers and decorators, we know how to adapt to their requirements and share their creativity.",
+        "text2":"Impromptu offers you a wide range of made-to-measure suspension models in a wide range of sizes and colours."
+    },
+    "appliques":{
+        "title":"wall lights",
+        "text1":"These recent creations illustrate our expertise in made-to-measure solutions.",
+        "text2":"The wall bracket and shade are available in all colours."
     }
 }

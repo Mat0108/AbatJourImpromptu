@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
 import Flag from "react-world-flags";
-import { LanguageContext, languageOptions, Language } from "..";
+import {  useLanguage, languageOptions, Language } from "..";
 
 const LanguageSelector = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [isButtonHovering, setIsButtonHovered] = useState(false);
   const [isMenuHovering, setIsMenuHovered] = useState(false);
-  const { userLanguage, userLanguageChange } = useContext(LanguageContext);
+  const { userLanguage, userLanguageChange } =  useLanguage()
 
   const isMobile = window.screen.width < 600;
   const handleClick = (e:any) => {

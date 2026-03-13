@@ -1,6 +1,6 @@
 import fr from "./fr.json";
 import en from "./en.json";
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 export const dictionnaire = fr;
 export type Language = 'fr' | 'en';
@@ -21,7 +21,7 @@ interface LanguageContextType {
   userLanguageChange: (lang: Language) => void;
 }
 
-export const LanguageContext = createContext<LanguageContextType>({
+const LanguageContext = createContext<LanguageContextType>({
   userLanguage: "fr",
   dictionnaire: dictionaryList.fr,
   userLanguageChange: () => {},
@@ -42,6 +42,7 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
     setUserLanguage(selected);
     window.localStorage.setItem("rcml-lang", selected);
   };
+  
 
   const provider: LanguageContextType = {
     userLanguage,
@@ -54,4 +55,13 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
       {children}
     </LanguageContext.Provider>
   );
+};
+
+
+export const useLanguage = () => {
+  const ctx = useContext(LanguageContext);
+  if (!ctx) {
+    throw new Error("useLanguage must be used inside LanguageProvider");
+  }
+  return ctx;
 };

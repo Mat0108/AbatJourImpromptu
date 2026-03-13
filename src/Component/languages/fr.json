@@ -5,7 +5,7 @@
     "home":{
         "title":"Maison de création d'abat jour sur mesure",
         "text1":"Créé en 1986, Impromptu est à votre écoute pour réaliser vos abat-jour sur mesure dans un style traditionnel ou contemporain. De nombreux modèles, peints à la main, plissés ou contrecollés sont visibles sur ce site ou à l’atelier.",
-        "text2":"Contactez nous, nous ferons tout notre possible pour satisfaire vos désirs. 01 42 27 62 99 ou au 06 49 49 83 80"
+        "text2":"Contactez nous, nous ferons tout notre possible pour satisfaire vos désirs. au 06 49 49 83 80"
     },
     "navbar":{
         "apropos":"a propos",
@@ -23,6 +23,27 @@
         "vendredi":"vendredi",
         "samedi":"samedi",
         "dimanche":"dimanche",
-        "close":"fermé"
+        "close":"fermé",
+        "from":"fermé du",
+        "to":"au",
+        "maps":"Voir l’itinéraire sur Google Maps"
+    },
+    "contact":{
+        "contact":"contact",
+        "numero":"06 49 49 83 80"
+    },
+    "traditionnel":{
+        "title":"traditionnel",
+        "text":"Passionnée par la lumière, Philippe Lempérière est convaincu qu’il crée l’atmosphère, qu’il sculpte les volumes et met en valeur les objets que l’on aime."
+    },
+    "contemporain":{
+        "title":"contemporain",
+        "text1": "Habitués à travailler avec des architectes d’intérieur et des décorateurs,nous savons nous adapter à leurs exigences et partageons leur créativité.",
+        "text2":"Impromptu vous propose de nombreux modèles de suspensions fabriqués sur mesure dans une large gamme de dimensions et de coloris"
+    },
+    "appliques":{
+        "title":"appliques",
+        "text1":"Ces créations récentes illustrent notre savoir-faire dans le « sur-mesure ».",
+        "text2":"Le support de l’applique et son abat-jour sont réalisables dans toutes les couleurs."
     }
     }

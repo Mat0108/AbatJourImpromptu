@@ -8,10 +8,17 @@ export type HoraireType = {
     vendredi: string;
     samedi: string;
     dimanche:string;
-    special_horaire:string;
+    special_horaire:{
+        start:Date,
+        end:Date
+    };
     
 }
-export const getHoraire = async ()=> {
+export const getHoraire = async () => {
     const res = await axios.get(`${apiUrl}/horaire/6994792f7fa9f300132403a6`);
     return res
+}
+export const updateHoraire = async (body:HoraireType) =>{
+    const res = await axios.post(`${apiUrl}/horaire/6994792f7fa9f300132403a6`,body);
+    return res;
 }
